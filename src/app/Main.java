@@ -1,5 +1,10 @@
 package app;
 
+import app.entity.Circle;
+import app.entity.Quadrant;
+import app.entity.Triangle;
+import app.model.IGeometricShape;
+
 import java.util.Scanner;
 
 public class Main {
@@ -17,5 +22,11 @@ public class Main {
         double triangleSide3 = scan.nextDouble();
         System.out.println("Enter the side of quadrant: ");
         double quadrantSide = scan.nextDouble();
+
+        IGeometricShape[] figures = {
+                new Circle(radius),
+                new Triangle(triangleSide1, triangleSide2, triangleSide3),
+                new Quadrant(quadrantSide)
+        };
     }
 }
