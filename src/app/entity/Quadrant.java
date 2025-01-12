@@ -6,7 +6,7 @@ public class Quadrant implements IGeometricShape {
 
     double side;
 
-    public Quadrant(double side){
+    public Quadrant(double side) {
         this.side = side;
     }
 

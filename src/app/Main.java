@@ -4,6 +4,7 @@ import app.entity.Circle;
 import app.entity.Quadrant;
 import app.entity.Triangle;
 import app.model.IGeometricShape;
+import app.service.AppService;
 
 import java.util.Scanner;
 
@@ -28,5 +29,21 @@ public class Main {
                 new Triangle(triangleSide1, triangleSide2, triangleSide3),
                 new Quadrant(quadrantSide)
         };
+
+        double circleSquare = figures[0].calcSquare();
+        double triangleSquare = figures[1].calcSquare();
+        double quadrantSquare = figures[2].calcSquare();
+
+        System.out.printf("%nThe square of circle: %.2f square cm%n",
+                circleSquare);
+        System.out.printf("The square of triangle: %.2f square cm",
+                triangleSquare);
+        System.out.printf("%nThe square of quadrant: %.2f square cm%n",
+                quadrantSquare);
+
+        AppService service = new AppService();
+        double totalSquare = service.calcTotalSquare(figures);
+        System.out.printf("%nTotal square of geometric figures: %.2f square cm%n",
+                totalSquare);
     }
 }
